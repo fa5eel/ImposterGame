@@ -56,3 +56,6 @@ gradle :app:assembleDebug
 The debug APK is created at `app/build/outputs/apk/debug/app-debug.apk`.
 
 Enjoy playing with friends and family!
+
+
+Vibecoded with Claude Code,Gemini.
