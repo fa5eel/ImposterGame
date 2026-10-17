@@ -1,0 +1,16 @@
+.gradle/
+.idea/
+.kotlin/
+/build/
+**/build/
+/gradle_bin/
+/gradle_home/
+/local.properties
+*.hprof
+*.log
+*.backup*
+*.bak*
+
+# Android Studio and Gradle
+*.iml
+.DS_Store
