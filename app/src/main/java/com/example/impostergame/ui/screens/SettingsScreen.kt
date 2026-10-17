@@ -223,35 +223,6 @@ fun SettingsScreen(
                         )
                     }
                 }
-                Spacer(modifier = Modifier.height(16.dp))
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text("Custom Time (seconds):", fontWeight = FontWeight.Medium)
-                    OutlinedTextField(
-                        value = settings.customDiscussionTimeSeconds.toString(),
-                        onValueChange = {
-                            try {
-                                val input = it.toIntOrNull() ?: 0
-                                settingsViewModel.updateSettings { it.copy(customDiscussionTimeSeconds = input) }
-                            } catch (e: NumberFormatException) {
-                                // Ignore invalid input
-                            }
-                        },
-                        label = { Text("Enter custom time") },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth(0.5f),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                    )
-                    Text(
-                        text = "${settings.customDiscussionTimeSeconds}s",
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.align(Alignment.CenterVertically)
-                    )
-                }
                 Spacer(modifier = Modifier.height(24.dp))
             }
 

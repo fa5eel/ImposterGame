@@ -37,7 +37,6 @@ class SettingsRepository @Inject constructor(
 
     companion object {
         private val DISCUSSSION_DURATION_SECONDS_KEY = intPreferencesKey("discussion_duration_seconds")
-        private val CUSTOM_DISCUSSION_TIME_SECONDS_KEY = intPreferencesKey("custom_discussion_time_seconds")
         private val IMPOSTER_COUNT_KEY = intPreferencesKey("imposter_count")
         private val DEFAULT_PLAYER_NAMES_KEY = stringSetPreferencesKey("default_player_names")
         private val ENABLE_SOUND_EFFECTS_KEY = booleanPreferencesKey("enable_sound_effects")
@@ -73,7 +72,6 @@ class SettingsRepository @Inject constructor(
                     val themeMode = themeModeStr?.let { ThemeMode.valueOf(it) } ?: ThemeMode.SYSTEM
                     GameSettings(
                         discussionDurationSeconds = prefs[DISCUSSSION_DURATION_SECONDS_KEY] ?: 60,
-                        customDiscussionTimeSeconds = prefs[CUSTOM_DISCUSSION_TIME_SECONDS_KEY] ?: 30,
                         imposterCount = prefs[IMPOSTER_COUNT_KEY] ?: 1,
                         defaultPlayerNames = defaultPlayerNames,
                         enableSoundEffects = prefs[ENABLE_SOUND_EFFECTS_KEY] ?: true,
@@ -105,7 +103,6 @@ class SettingsRepository @Inject constructor(
                 newSettings.selectedPackId?.let { prefs[SELECTED_PACK_ID_KEY] = it }
                     ?: prefs.remove(SELECTED_PACK_ID_KEY)
                 prefs[THEME_MODE_KEY] = newSettings.themeMode.name
-                prefs[CUSTOM_DISCUSSION_TIME_SECONDS_KEY] = newSettings.customDiscussionTimeSeconds
             }
         }
     }

@@ -86,6 +86,18 @@ fun DiscussionScreen(
                 }
             }
 
+            // Warning when time is up
+            if (!isTimeless && remainingSeconds == 0) {
+                Text(
+                    text = "Time's up! Get ready to vote...",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(top = 8.dp),
+                    textAlign = TextAlign.Center
+                )
+            }
+
             // Countdown Timer Display
             Box(
                 contentAlignment = Alignment.Center,

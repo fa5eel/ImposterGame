@@ -87,6 +87,7 @@ fun AppNavGraph(
         composable(Screen.WordPacks.route) {
             WordPacksScreen(
                 wordPackViewModel = wordPackViewModel,
+                settingsViewModel = settingsViewModel,
                 onBack = { navController.popBackStack() }
             )
         }

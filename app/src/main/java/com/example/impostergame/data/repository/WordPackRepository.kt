@@ -37,7 +37,12 @@ class WordPackRepository @Inject constructor() {
                 WordPair("Door", "Window", "Part of a building"),
                 WordPair("Keyboard", "Mouse", "Computer peripheral"),
                 WordPair("Phone", "Tablet", "Electronic device"),
-                WordPair("Blanket", "Pillow", "Bedroom item")
+                WordPair("Blanket", "Pillow", "Bedroom item"),
+                WordPair("Fork", "Knife", "Used for eating"),
+                WordPair("Plate", "Bowl", "Holds food"),
+                WordPair("Napkin", "Tissue", "For cleaning up"),
+                WordPair("Lamp", "Switch", "Controls lighting"),
+                WordPair("Rug", "Carpet", "Floor covering")
             ),
             isCustom = false
         ),
@@ -57,7 +62,12 @@ class WordPackRepository @Inject constructor() {
                 WordPair("Baseball", "Bat", "Played on a diamond"),
                 WordPair("Golf", "Club", "Played on a course"),
                 WordPair("Volleyball", "Net", "Played with hands"),
-                WordPair("Boxing", "Gloves", "Combat sport")
+                WordPair("Boxing", "Gloves", "Combat sport"),
+                WordPair("Hockey", "Stick", "Played on ice"),
+                WordPair("Cricket", "Bat", "Played with a ball"),
+                WordPair("Skiing", "Snow", "Winter sport"),
+                WordPair("Surfing", "Board", "Ocean sport"),
+                WordPair("Yoga", "Mat", "Flexibility exercise")
             ),
             isCustom = false
         ),
@@ -77,7 +87,12 @@ class WordPackRepository @Inject constructor() {
                 WordPair("Chocolate", "Candy", "Sweet treat"),
                 WordPair("Soup", "Salad", "Liquid dish"),
                 WordPair("Eggs", "Omelette", "Breakfast food"),
-                WordPair("Pasta", "Noodles", "Italian staple")
+                WordPair("Pasta", "Noodles", "Italian staple"),
+                WordPair("Steak", "Grill", "Cooked meat"),
+                WordPair("Salad", "Lettuce", "Healthy dish"),
+                WordPair("Cake", "Frosting", "Sweet dessert"),
+                WordPair("Coffee", "Mug", "Hot beverage"),
+                WordPair("Rice", "Chopsticks", "Asian staple")
             ),
             isCustom = false
         ),
@@ -97,7 +112,12 @@ class WordPackRepository @Inject constructor() {
                 WordPair("Bear", "Wolf", "Forest animal"),
                 WordPair("Frog", "Toad", "Amphibian"),
                 WordPair("Butterfly", "Bee", "Insect"),
-                WordPair("Horse", "Cow", "Farm animal")
+                WordPair("Horse", "Cow", "Farm animal"),
+                WordPair("Monkey", "Banana", "Primate animal"),
+                WordPair("Penguin", "Fish", "Bird that swims"),
+                WordPair("Tiger", "Stripes", "Big cat with pattern"),
+                WordPair("Owl", "Mouse", "Nocturnal bird"),
+                WordPair("Dolphin", "Water", "Intelligent marine mammal")
             ),
             isCustom = false
         ),
@@ -117,7 +137,12 @@ class WordPackRepository @Inject constructor() {
                 WordPair("Gold", "Bronze", "Precious metal"),
                 WordPair("Navy", "Marine", "Dark blue shade"),
                 WordPair("Violet", "Indigo", "Purple shade"),
-                WordPair("Turquoise", "Teal", "Blue-green color")
+                WordPair("Turquoise", "Teal", "Blue-green color"),
+                WordPair("Silver", "Gray", "Metallic color"),
+                WordPair("Lavender", "Purple", "Light purple color"),
+                WordPair("Olive", "Green", "Dark yellow-green color"),
+                WordPair("Coral", "Orange", "Pink-orange color"),
+                WordPair("Indigo", "Blue", "Deep blue color")
             ),
             isCustom = false
         )

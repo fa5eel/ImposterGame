@@ -78,6 +78,17 @@ fun VotingScreen(
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
+            // Voting warning
+            if (gameState.showVotingWarning) {
+                Text(
+                    text = "Time to vote! Find the Imposter.",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(bottom = 12.dp)
+                )
+            }
+
             Text(
                 text = "Tap on the player the group decided to vote out:",
                 fontSize = 14.sp,

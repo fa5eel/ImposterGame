@@ -60,11 +60,7 @@ class GameViewModel @Inject constructor(
                 currentPack = initialPack,
                 gameMode = gameMode,
                 imposterCount = currentSettings.imposterCount,
-                // Use custom time if set (> 0), otherwise use preset duration
-                roundDurationSeconds = when {
-                    currentSettings.customDiscussionTimeSeconds > 0 -> currentSettings.customDiscussionTimeSeconds
-                    else -> currentSettings.discussionDurationSeconds
-                }.coerceAtLeast(1) // Ensure at least 1 second for timer
+                roundDurationSeconds = currentSettings.discussionDurationSeconds.coerceAtLeast(1) // Ensure at least 1 second for timer
             )
         }
     }

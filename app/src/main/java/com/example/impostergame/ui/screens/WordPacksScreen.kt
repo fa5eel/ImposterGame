@@ -21,15 +21,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.impostergame.domain.model.WordPair
+import com.example.impostergame.ui.viewmodel.SettingsViewModel
 import com.example.impostergame.ui.viewmodel.WordPackViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WordPacksScreen(
     wordPackViewModel: WordPackViewModel,
+    settingsViewModel: SettingsViewModel,
     onBack: () -> Unit
 ) {
     val wordPacks by wordPackViewModel.wordPacks.collectAsState()
+    val settings by settingsViewModel.settings.collectAsState()
     var showCreateDialog by remember { mutableStateOf(false) }
     var packToEditId by remember { mutableStateOf<String?>(null) }
 
@@ -71,12 +74,17 @@ fun WordPacksScreen(
                     var expanded by remember { mutableStateOf(false) }
                     Column(modifier = Modifier.padding(16.dp)) {
                         Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable { expanded = !expanded },
+                            modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
+                            // Selection mechanism for gameplay pack
+                            RadioButton(
+                                selected = settings.selectedPackId == pack.id,
+                                onClick = { settingsViewModel.updateSettings { it.copy(selectedPackId = pack.id) } },
+                                enabled = true
+                            )
+
                             Column(modifier = Modifier.weight(1f)) {
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     Text(
@@ -119,11 +127,12 @@ fun WordPacksScreen(
                                 }
                             }
 
-                            // Expand/collapse indicator
+                            // Expand/collapse indicator (only this icon is clickable for expand/collapse)
                             Icon(
                                 imageVector = if (expanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
                                 contentDescription = if (expanded) "Collapse" else "Expand",
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.clickable { expanded = !expanded }
                             )
                         }
 
